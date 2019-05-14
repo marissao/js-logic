@@ -233,7 +233,7 @@ console.log('dirty30: ', dirty30(one, two, three))
 */ 
 
 function evenStevens(num){
-  if(num%2 == 0){
+  if(num%2 === 0){
     return true;
   }else{
     return false;
@@ -241,6 +241,19 @@ function evenStevens(num){
 }
 
 console.log('evenStevens: ', evenStevens(2))
+
+/* When trying to determine if the number passed in is an odd interger, you would use the following:
+
+function oddStevens(num){
+  if(num%2 === 1){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+console.log('oddStevens', oddStevens(3))
+*/
 
 /*
  * #11
@@ -326,6 +339,24 @@ console.log('moneyTrain: ', moneyTrain(120))
  * Console.log budget and doughnutBought again.
 */ 
 
+var budget = 50;
+var doughnutPrice = 4;
+var doughnutBought = 0;
+
+function buyDoughnut(){
+  if(budget >= doughnutPrice){
+    budget -= doughnutPrice // budget = budget - doughnutPrice
+    doughnutBought++;
+  }
+}
+
+buyDoughnut()
+console.log(budget);
+console.log(doughnutBought);
+
+/*You need to invoke the function buyDoughnut() prior to console.log(budget)
+ and console.log(doughnutBought)*/
+
 /*Final Boss*/
 /*Create a function name dailySpecials which takes in a parameter: `special`.
 Inside the function, create a switch statement that will check the daily specials of your favorite restaurant (or make up your own daily specials for each day of the week.*/
@@ -359,6 +390,11 @@ for (var i = 0; i<toyotaModels.length; i++){
  * "Player: 5"
 */
 
+var team = ['Player 1', 'Player 2', 'Player 3', 'Player 4', 'Player 5'];
+
+for (var i = 0; i<5; i++){
+  console.log(team[i]);
+}
 
 /* 
  * #16
@@ -366,6 +402,9 @@ for (var i = 0; i<toyotaModels.length; i++){
 */
   var myFavFoods = ["lemon bar", "carrot cake", "nachos", "bacon cheeseburger", "ramen", "sweet potato fries", "chimichanga"];
 
+for (var i = 0; i<myFavFoods.length; i++){
+  console.log(myFavFoods[i])
+}
 
 /*
  * #17
@@ -382,7 +421,17 @@ for (var i = 0; i<toyotaModels.length; i++){
  * Console.log your result.
 */
 
+var numArray = [5, 4, 3, 2, 1];
+var total = 0;
 
+function sumItUp(arr){
+  for(var i = 0; i<arr.length; i++){
+    total += arr[i]
+  }
+  return total;
+}
+
+console.log('Sum Array ', sumItUp(numArray))
 
 /*
  * #18
@@ -397,6 +446,24 @@ for (var i = 0; i<toyotaModels.length; i++){
 */ 
 
 var players = ["Yao Ming", "BrookLin", " Jesus Shuttlesworth", "Manute Bol", "Sidney Deane", "World B Free"];
+var east = [];
+var west = [];
+
+function allStars(ballers){
+  for(var i = 0; i<ballers.length; i++){
+    if(i%2 === 0){
+      east.push(players[i])
+    }else{
+      west.push(players[i])
+    }
+  }
+  return ballers
+}
+
+allStars(players);
+console.log(east)
+console.log(west)
+
 /*
  * #19
  * Function - subways
@@ -409,8 +476,19 @@ var players = ["Yao Ming", "BrookLin", " Jesus Shuttlesworth", "Manute Bol", "Si
  * Console.log your results.
 */ 
 
-  var subOftheDay = ["Teriyaki Chicken", "Spicy Italian", "Turkey", "BMT", "Black Forest Ham", "Meatball Marinara", "Veggie"];
+var subOftheDay = ["Teriyaki Chicken", "Spicy Italian", "Turkey", "BMT", "Black Forest Ham", "Meatball Marinara", "Veggie"];
 
+function subways(special){
+  for(var i = 0; i<special.length; i++){
+    if(i%2 === 1){
+      console.log('Classic Tuna')
+    }else{
+      console.log(subOftheDay[i])
+    }
+  }
+}
+
+console.log(subways(subOftheDay))
 
 /*
 Final Boss
