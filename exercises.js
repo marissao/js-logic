@@ -73,7 +73,13 @@ console.log(login('test1234'))
  * Console.log your result.
 */
 
+function isGreaterThan(first,second){
+  if(first > second){
+    return true;
+  }
+}
 
+console.log('isGreaterThan: ', isGreaterThan(100,1))
 
 /*
  * #4
@@ -87,7 +93,12 @@ console.log(login('test1234'))
  * Console.log your result.
 */
 
+function mustBeTrue(boo){
+  if(boo == true);
+    return true; 
+}
 
+console.log('mustBeTrue: ', mustBeTrue(true))
 
 /*
  * #5
@@ -101,7 +112,13 @@ console.log(login('test1234'))
  * Console.log your result.
 */
 
+function bigBird(word){
+  if(word.length === 3)
+    return 'Word to Big Bird!';
 
+}
+
+console.log('bigBird: ', bigBird('cat'))
 
 /*
  * #6
@@ -116,6 +133,17 @@ console.log(login('test1234'))
  * Console.log your result.
 */
 
+function isEqual(first, second){
+  if(first == second){
+    return 'You look mahvelous!';
+  }else{
+    return "I don't know who you are anymore";
+  }
+}
+
+var first = 'Tacocat';
+var second = 'tacocat';
+console.log ('isEqual: ', isEqual(first,second))
 
 /*
  * #7
@@ -130,6 +158,15 @@ console.log(login('test1234'))
  * Console.log your result.
 */
 
+function notEqual(first, second){
+  if(first !== second){
+    return 'Opposites do attract.';
+  }else{
+    return "Cause it's like you're my mirror.";
+  }
+}
+
+console.log('notEqual: ', notEqual(first, second))
 
 /*
  * #8
@@ -143,7 +180,15 @@ console.log(login('test1234'))
  * Console.log your result.
 */ 
 
+function spareChange(money){
+  if(money > 100){
+    return true;
+  }else{
+    return false;
+  }
+}
 
+console.log('spareChange: ', spareChange(150))
 
 /*
  * #9
@@ -159,7 +204,19 @@ console.log(login('test1234'))
  * Console.log your result.
 */ 
 
+function dirty30(one, two, three){
+  var sum = one + two + three;
+  if(sum > 30){
+    return true;
+  }else{
+    return false;
+  }
+}
 
+var one = 15;
+var two = 20;
+var three = 30;
+console.log('dirty30: ', dirty30(one, two, three))
 
 /*
  * #10
@@ -173,8 +230,15 @@ console.log(login('test1234'))
  * Console.log your result.
 */ 
 
+function evenStevens(num){
+  if(num%2 == 0){
+    return true;
+  }else{
+    return false;
+  }
+}
 
-
+console.log('evenStevens: ', evenStevens(2))
 
 /*
  * #11
@@ -189,6 +253,15 @@ console.log(login('test1234'))
  * Console.log your result.
 */ 
 
+function daClub(cover, age){
+  if(cover >= 21 && age >= 21){
+    return 'Welcome to the Legends Lounge';
+  }else{
+    return 'Chuck E Cheese is across the street';
+  }
+}
+
+console.log('daClub: ', daClub(45,50))
 
 /*
  * #12
@@ -203,7 +276,15 @@ console.log(login('test1234'))
  * Console.log your result.
 */ 
 
+function graduation(credits, grades){
+  if (credits >= 120 || grades >= 2.0){
+    return 'Congratulations on a job well done.';
+  }else{
+    return 'See you in summer school.'
+  }
+}
 
+console.log('graduation: ', graduation(100, 1.0))
 
 /*
  * #13
@@ -217,6 +298,19 @@ console.log(login('test1234'))
  * Console.log your result.
 */ 
 
+function moneyTrain(speed){
+  if(speed < 50){
+   return "You are riding Honolulu's Rail."; 
+  }else if(speed < 100){
+    return 'You are riding an Amtrak.';
+  }else{(speed > 100)
+    return "Now you ballin' in the Shinkansen!"
+  }
+}
+
+console.log('moneyTrain: ', moneyTrain(120))
+
+CONTINUE HERE
 
 /*
  * #14
