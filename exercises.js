@@ -141,9 +141,11 @@ function isEqual(first, second){
   }
 }
 
-var first = 'Tacocat';
-var second = 'tacocat';
-console.log ('isEqual: ', isEqual(first,second))
+var capTacocat = 'Tacocat';
+var lowerTacocat = 'tacocat';
+console.log ('isEqual: ', isEqual(capTacocat,lowerTacocat))
+
+/*Even with == (loose equality), 'Tacocat' is not equal to 'tacocat' because JavaScript is case sensitve. Thus the output is 'You look mahvelous!'*/
 
 /*
  * #7
@@ -166,7 +168,7 @@ function notEqual(first, second){
   }
 }
 
-console.log('notEqual: ', notEqual(first, second))
+console.log('notEqual: ', notEqual(capTacocat, lowerTacocat))
 
 /*
  * #8
@@ -309,8 +311,6 @@ function moneyTrain(speed){
 }
 
 console.log('moneyTrain: ', moneyTrain(120))
-
-CONTINUE HERE
 
 /*
  * #14
