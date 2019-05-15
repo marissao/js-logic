@@ -79,6 +79,7 @@ function isGreaterThan(first,second){
   }
 }
 
+console.log(isGreaterThan(100,1))
 console.log('isGreaterThan: ', isGreaterThan(100,1))
 
 /*
@@ -94,8 +95,12 @@ console.log('isGreaterThan: ', isGreaterThan(100,1))
 */
 
 function mustBeTrue(boo){
-  if(boo == true);
-    return true; 
+  if(boo === true){
+    return true;
+  }else{
+    return false;
+  }
+    
 }
 
 console.log('mustBeTrue: ', mustBeTrue(true))
@@ -113,9 +118,9 @@ console.log('mustBeTrue: ', mustBeTrue(true))
 */
 
 function bigBird(word){
-  if(word.length === 3)
+  if(word.length === 3){
     return 'Word to Big Bird!';
-
+  }  
 }
 
 console.log('bigBird: ', bigBird('cat'))
@@ -145,7 +150,7 @@ var capTacocat = 'Tacocat';
 var lowerTacocat = 'tacocat';
 console.log ('isEqual: ', isEqual(capTacocat,lowerTacocat))
 
-/*Even with == (loose equality), 'Tacocat' is not equal to 'tacocat' because JavaScript is case sensitve. Thus the output is 'You look mahvelous!'*/
+/* NOTE: Even with == (loose equality), 'Tacocat' is not equal to 'tacocat' because JavaScript is case sensitve. Thus the output is 'I don't know who you are anymore'. However if the two variables being compared were '5' and the integer 5, the output would be 'You look mahvelous!'*/
 
 /*
  * #7
@@ -215,10 +220,7 @@ function dirty30(one, two, three){
   }
 }
 
-var one = 15;
-var two = 20;
-var three = 30;
-console.log('dirty30: ', dirty30(one, two, three))
+console.log('dirty30: ', dirty30(15, 20, 30))
 
 /*
  * #10
@@ -242,7 +244,7 @@ function evenStevens(num){
 
 console.log('evenStevens: ', evenStevens(2))
 
-/* When trying to determine if the number passed in is an odd interger, you would use the following:
+/* NOTE: When trying to determine if the number passed in is an odd interger, you would use the following:
 
 function oddStevens(num){
   if(num%2 === 1){
@@ -292,7 +294,7 @@ console.log('daClub: ', daClub(45,50))
 */ 
 
 function graduation(credits, grades){
-  if (credits >= 120 || grades >= 2.0){
+  if(credits >= 120 || grades >= 2.0){
     return 'Congratulations on a job well done.';
   }else{
     return 'See you in summer school.'
@@ -354,14 +356,42 @@ buyDoughnut()
 console.log(budget);
 console.log(doughnutBought);
 
-/*You need to invoke the function buyDoughnut() prior to console.log(budget)
+/* NOTE: You need to invoke the function buyDoughnut() prior to console.log(budget)
  and console.log(doughnutBought)*/
 
 /*Final Boss*/
 /*Create a function name dailySpecials which takes in a parameter: `special`.
 Inside the function, create a switch statement that will check the daily specials of your favorite restaurant (or make up your own daily specials for each day of the week.*/
 
+  function dailySpecials(special){
+  switch(special){
+    case 'Monday':
+      menu = 'fish and poi';
+      break;
+    case 'Tuesday':
+      menu = 'lomi salmon';
+      break;
+    case 'Wednesday':
+      menu = 'pipikaula';
+      break;
+    case 'Thursday':
+      menu = 'squid and chicken luau';
+      break;
+    case 'Friday':
+      menu = 'lau lau';
+      break;
+    case 'Saturday':
+      menu = 'beef and tripe stew';
+      break;
+    case 'Sunday':
+      menu = 'Nothing!' 
+    default:
+      menu = "Ask the chef for today's special";
+  }
+  return menu;
+}
 
+console.log(dailySpecials('Tuesday'))
 
 /*
 For loops - A for loop checks a condition a specific number of times and allows us to execute a code block and evaluate a condition to determine if our loop should run again.
@@ -390,10 +420,10 @@ for (var i = 0; i<toyotaModels.length; i++){
  * "Player: 5"
 */
 
-var team = ['Player 1', 'Player 2', 'Player 3', 'Player 4', 'Player 5'];
 
-for (var i = 0; i<5; i++){
-  console.log(team[i]);
+
+for (var i = 0; i<=5; i++){
+  console.log('Player: ', i);
 }
 
 /* 
@@ -422,16 +452,17 @@ for (var i = 0; i<myFavFoods.length; i++){
 */
 
 var numArray = [5, 4, 3, 2, 1];
-var total = 0;
 
 function sumItUp(arr){
+  var total = 0; /*(Q: In the Solutions key, why was var total determined to be a local variable instead of a global variable? */
   for(var i = 0; i<arr.length; i++){
+    console.log(arr[i]);
     total += arr[i]
   }
   return total;
 }
 
-console.log('Sum Array ', sumItUp(numArray))
+console.log('sumItUp: ', sumItUp(numArray))
 
 /*
  * #18
@@ -451,10 +482,11 @@ var west = [];
 
 function allStars(ballers){
   for(var i = 0; i<ballers.length; i++){
+    console.log(ballers[i]); /* Q: how do you determine where to insert console.log into your function or in your conditional statements?*/
     if(i%2 === 0){
-      east.push(players[i])
+      east.push(ballers[i]);
     }else{
-      west.push(players[i])
+      west.push(ballers[i]);
     }
   }
   return ballers
@@ -481,11 +513,12 @@ var subOftheDay = ["Teriyaki Chicken", "Spicy Italian", "Turkey", "BMT", "Black 
 function subways(special){
   for(var i = 0; i<special.length; i++){
     if(i%2 === 1){
-      console.log('Classic Tuna')
-    }else{
-      console.log(subOftheDay[i])
+      console.log(i)
+      special.splice(i, 3, 'Classic Tuna' ); /* Q: the second parameter defines how many elements should be removed. In the Solutions key, why is the second parameter 1 instead of 3? Aren't there 3 odd numbered indexed items in the array?Also why is the subsequent line in the conditional statement, "special[i] = "Classic Tuna";"? */ 
+    }
     }
   }
+  return special;
 }
 
 console.log(subways(subOftheDay))
@@ -504,7 +537,13 @@ Final Boss
 
 var phrase = "An apple a day keeps Alice feeling awesome!";
  
-  
+function removeLetter(str){
+  for(var i = 0; i<str.length; i++){
+    if(i == 'A', 'a'){
+
+    }
+  }
+}  
   
 
 
