@@ -420,9 +420,7 @@ for (var i = 0; i<toyotaModels.length; i++){
  * "Player: 5"
 */
 
-
-
-for (var i = 0; i<=5; i++){
+for (var i = 1; i<=5; i++){
   console.log('Player: ', i);
 }
 
@@ -454,7 +452,10 @@ for (var i = 0; i<myFavFoods.length; i++){
 var numArray = [5, 4, 3, 2, 1];
 
 function sumItUp(arr){
-  var total = 0; /*(Q: In the Solutions key, why was var total determined to be a local variable instead of a global variable? */
+  var total = 0; 
+  /*(Q: In the Solutions key, why was var total determined to be a local variable instead of a global variable? 
+  
+  A: To contain that variable within the scope of the function. This also keeps the variable from being accidently overwritten or used outside the scope of the function.*/
   for(var i = 0; i<arr.length; i++){
     console.log(arr[i]);
     total += arr[i]
@@ -482,7 +483,9 @@ var west = [];
 
 function allStars(ballers){
   for(var i = 0; i<ballers.length; i++){
-    console.log(ballers[i]); /* Q: how do you determine where to insert console.log into your function or in your conditional statements?*/
+    console.log(ballers[i]); 
+    /* Q: how do you determine where to insert console.log into your function or in your conditional statements?
+    A: You can console.log anywhere in your code to check and debug your code along the way.*/
     if(i%2 === 0){
       east.push(ballers[i]);
     }else{
@@ -509,19 +512,21 @@ console.log(west)
 */ 
 
 var subOftheDay = ["Teriyaki Chicken", "Spicy Italian", "Turkey", "BMT", "Black Forest Ham", "Meatball Marinara", "Veggie"];
+console.log(subOftheDay)
+
+subOftheDay.slice(1,2)
 
 function subways(special){
-  for(var i = 0; i<special.length; i++){
+  for (i = 0; i<special.length; i++){
+    console.log(i)
     if(i%2 === 1){
-      console.log(i)
-      special.splice(i, 3, 'Classic Tuna' ); /* Q: the second parameter defines how many elements should be removed. In the Solutions key, why is the second parameter 1 instead of 3? Aren't there 3 odd numbered indexed items in the array?Also why is the subsequent line in the conditional statement, "special[i] = "Classic Tuna";"? */ 
+      special.splice("Classic Tuna");
+
     }
-    }
+  
   }
   return special;
 }
-
-console.log(subways(subOftheDay))
 
 /*
 Final Boss
@@ -545,13 +550,6 @@ function removeLetter(str){
   }
 }  
   
-
-
-
-
-
-
-
-
-
+/*Q: With conditional statments, "if _____", do you need to always have a return statement?
+*/
 
